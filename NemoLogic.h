@@ -3,8 +3,6 @@
 
 class NemoLogic {
 public:
-    NemoLogic();
-    ~NemoLogic();
     bool solve();
     int check_row(int ri);
     int check_col(int ci);
