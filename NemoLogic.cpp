@@ -10,7 +10,8 @@ using namespace std;
 
 void NemoLogic::input(istream &input){
     input >> row_size >> col_size;
-    
+    input.ignore(1);
+
     row_hints.resize(row_size, vector<int>());
     for (int ri = 0; ri < row_size; ri++){
         string line;
@@ -28,4 +29,7 @@ void NemoLogic::input(istream &input){
         stringstream ss(line); int temp;
         while (ss >> temp) col_hints[ci].push_back(temp);
     }
+
+    board.resize(row_size, vector,int>(col_size));
 }
+
