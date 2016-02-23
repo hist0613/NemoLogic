@@ -7,7 +7,7 @@ using namespace std;
 
 class NemoLogic {
 public:
-	bool solve(int ri, bool debug = false);
+	bool solve(int ri, bool debug);
 	bool check_col(int ci);
 	void input(istream &input);
 	void output(ostream &output);
