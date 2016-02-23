@@ -9,12 +9,14 @@ using namespace std;
 #include "NemoLogic.h"
 
 int main(void) {
-	for (int ti = 1; ti <= 7; ti++) {
+	for (int ti = 1; ti <= 1; ti++) {
 		NemoLogic nl;
-		nl.input(ifstream("input" + to_string(ti) + ".txt"));
-		nl.solve(0, false);
+		ifstream fin("input" + to_string(ti) + ".txt");
+		ofstream fout("output" + to_string(ti) + ".txt");
+		nl.input(fin);
+		nl.solve(0, true);
 		// nl.output(cout);
-		nl.output(ofstream("output" + to_string(ti) + ".txt"));
+		nl.output(fout);
 	}
 	return 0;
 }
