@@ -62,7 +62,7 @@ void NemoLogic::output(ostream &output) {
     }
 
     margin_left = (left_max_digits + 1) * max_cnt_row_hints;
-    
+
     // 위쪽의 힌트들을 출력
     for (int hi = 0; hi < max_cnt_col_hints; hi++) {
         output << setw(margin_left) << ' ';
@@ -140,6 +140,9 @@ bool NemoLogic::solve(int ri, bool debug = false) {
                 board[ri][pos + ci] = 1;
             }
             pos += row_hints[ri][rhi];
+
+            // 마지막 블록 오른쪽의 빈칸은 처리하지 않음
+            if (rhi == (int)row_hints[ri].size() - 1) continue;
 
             // "Ⅹ" 체크
             board[ri][pos] = -1;
