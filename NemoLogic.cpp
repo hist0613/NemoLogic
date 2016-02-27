@@ -225,9 +225,14 @@ bool NemoLogic::check_col(int ci) {
             chi++;
         }
     }
-    if (run > 0 && run != col_hints[ci][chi])
+    if (run > 0) {
+        if (run != col_hints[ci][chi]) 
+            return false;
+        chi++;
+    } 
+    if (chi != (int)col_hints[ci].size())
         return false;
-
+    
     return true;
 }
 
